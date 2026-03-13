@@ -9,6 +9,14 @@ export class Toto {
             throw new Error("Egy Totó szelvány csak 14 sorból áll");
         }
 
+        if (csapat1 === "" || csapat2 === "") {
+            throw new Error("A csapatnév nem lehet üres");
+        }
+
+        if (gol1 < 0 || gol2 < 0) {
+            throw new Error("A gólok száma nem lehet negatív");
+        }
+
         this.nevek1.push(csapat1);
         this.golok1.push(gol1);
         this.nevek2.push(csapat2);
