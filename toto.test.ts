@@ -25,4 +25,16 @@ describe('Toto', () => {
         const toto = new Toto();
         expect(() => toto.ujEredmeny("A", -1, "B", 2)).toThrow();
     });
+
+    test('Meccs eredmény helyes formátumban', () => {
+        const toto = new Toto();
+
+        toto.ujEredmeny("A", 2, "B", 3);
+        expect(toto.merkozesEredmeny(0)).toBe("2-3");
+    });
+
+    test('Érvénytelen id kivételt dob', () => {
+        const toto = new toto();
+        expect(() => toto.merkozesEredmeny(0)).toThrow();
+    });
 });
