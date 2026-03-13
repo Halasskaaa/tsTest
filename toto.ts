@@ -1,13 +1,19 @@
-class Toto {
+export class Toto {
     nevek1: string[] = [];
     golok1: number[] = [];
     nevek2: string[] = [];
     golok2: number[] = [];
     
     ujEredmeny(csapat1: string, gol1: number, csapat2: string, gol2: number): void {
-        if (this.nevek1.length === 14) {
-            new Error("Egy Totó szelvány csak 14 sorból áll");
+        if (this.nevek1.length >= 14) {
+            throw new Error("Egy Totó szelvány csak 14 sorból áll");
         }
+
+        this.nevek1.push(csapat1);
+        this.golok1.push(gol1);
+        this.nevek2.push(csapat2);
+        this.golok2.push(gol2);
+        
     }
 
 }
