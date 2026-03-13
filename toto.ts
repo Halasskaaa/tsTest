@@ -21,7 +21,12 @@ export class Toto {
         this.golok1.push(gol1);
         this.nevek2.push(csapat2);
         this.golok2.push(gol2);
-        
     }
 
+    merkozesEredmeny(id: number): string {
+        if (id < 0 || id >= this.golok1.length) {
+            throw new Error("Érvénytelen meccs sorszám");
+        }
+        return this.golok1[id] + "-" + this.golok2[id];
+    }
 }
