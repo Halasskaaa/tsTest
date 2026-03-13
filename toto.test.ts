@@ -18,7 +18,7 @@ describe('Toto', () => {
 
     test('Üres csapatnév kivételt dob', () => {
         const toto = new Toto();
-        expect(() => toto.ujEredmeny("", 1, "B", 2).toThrow();
+        expect(() => toto.ujEredmeny("", 1, "B", 2)).toThrow();
     });
 
     test('Negatív gól kivételt dob', () => {
@@ -34,7 +34,7 @@ describe('Toto', () => {
     });
 
     test('Érvénytelen id kivételt dob', () => {
-        const toto = new toto();
+        const toto = new Toto();
         expect(() => toto.merkozesEredmeny(0)).toThrow();
     });
 });
